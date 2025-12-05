@@ -22,6 +22,7 @@ bybit = ccxt.bybit({
     'options': {'defaultType': 'future'}
 })
 
+
 # 5. Fungsi utama cek EMA-21
 def cek_ogusdt():
     try:
@@ -87,6 +88,9 @@ def cek_ogusdt():
     except Exception as e:
         print(f"Error: {e}")
 
+# TES LANGSUNG KIRIM PESAN (hapus lagi nanti kalau sudah berhasil)
+bot = Bot(token=TELEGRAM_TOKEN)
+bot.send_message(chat_id=CHAT_ID, text="Bot OGUSDT sudah NYALA! Tes sukses ✅")
 # Jalankan fungsi
 cek_ogusdt()
 print("Cek OGUSDT selesai")
